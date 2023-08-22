@@ -1,5 +1,4 @@
 from ClassStudent import Students
-Students
 
 
 # 학생을 한 명씩 반복합니다.
