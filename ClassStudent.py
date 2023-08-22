@@ -33,9 +33,9 @@ students = [
 ]
 
 # Student 인스턴트의 속성에 접근하는 방법
-students[0].name
-students[0].korean
-students[0].math
-students[0].english
-students[0].science
+print(students[0].name,
+      students[0].korean,
+      students[0].math,
+      students[0].english,
+      students[0].science)
 
