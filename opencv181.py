@@ -17,24 +17,25 @@ def mask_setTo():
     cv2.waitKey()
     cv2.destroyAllWindows()
 
-import numpy as np
-import cv2
+def mask_copyTo():
+    src = cv2.imread('airplane.bmp', cv2.IMREAD_COLOR)
+    mask = cv2.imread('mask_plane.bmp', cv2.IMREAD_GRAYSCALE)
+    dst = cv2.imread('field.bmp', cv2.IMREAD_COLOR)
 
-
-def mask_setTo():
-    src = cv2.imread('lenna.bmp', cv2.IMREAD_COLOR)
-    mask = cv2.imread('mask_smile.bmp', cv2.IMREAD_GRAYSCALE)
-
-    if src is None or mask is None:
+    if src is None or mask is None or dst is None:
         print('Image load failed!')
         return
 
-    src[mask > 0] = (0, 255, 255)
+    cv2.copyTo(src, mask, dst)
+    # dst[mask > 0] = src[mask > 0]
 
     cv2.imshow('src', src)
+    cv2.imshow('dst', dst)
     cv2.imshow('mask', mask)
     cv2.waitKey()
     cv2.destroyAllWindows()
+
+
 
 def time_inverse():
     src = cv2.imread('lenna.bmp', cv2.IMREAD_GRAYSCALE)
